@@ -1,0 +1,54 @@
+package Basic_06_Extends;
+
+import java.util.Scanner;
+
+
+public class Ani_Cat extends Ani_All {
+	
+	String[] nicknameA = new String[3];
+	int[] ageA = new int[3];
+	String[] sortA = new String[3];
+	
+	int count=0;                          // count를 input메소드안에서 하면 input메소드 밖의 for문에서 사용할 수 없다!!
+	String sori = "야옹";
+	String name = "고양이";
+	String nickname, inform, sort, ask;
+	int age ;
+	
+	Scanner scanf = new Scanner(System.in);
+
+
+
+
+void input() {
+		while(true) {
+		System.out.println("고양이의 정보를 알려주세요!");
+		System.out.println("---------------------------------------");
+		nick();
+		age();
+		sort();
+		
+		nicknameA[count] = nickname;
+		ageA[count] = age;
+		sortA[count] = sort;
+		
+		System.out.println("고양이가 더 있으신가요? (y/n)");
+		ask=scanf.next();
+		count++;
+		if(ask.equals("y")) {
+			continue;
+		}	else {
+			break;
+		} 
+		}
+		System.out.println("고양이를 "+(count) +"마리 키우시는군요!");
+		System.out.println("고양이 정보를 확인해보실래요??");
+		System.out.println("-----------------------------------");
+		for(int i=0; i<count; i++) {
+			System.out.println("이름 : "+nicknameA[i]);
+			System.out.println("나이 : "+ageA[i]);
+			System.out.println("종류 : "+sortA[i]+"\n");
+		}
+		
+		
+	}
